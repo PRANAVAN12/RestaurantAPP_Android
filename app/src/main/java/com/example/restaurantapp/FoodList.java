@@ -1,13 +1,21 @@
 package com.example.restaurantapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.restaurantapp.Model.Food;
+import com.example.restaurantapp.ViewHolder.FoodViewHolder;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
+
 
 public class FoodList extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -18,7 +26,7 @@ public class FoodList extends AppCompatActivity {
 
     String categoryId="";
 
-    FirebaseRecyclerAdapter<Food,FoodViewHolder> adapter;
+    FirebaseRecyclerAdapter<Food, FoodViewHolder> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
