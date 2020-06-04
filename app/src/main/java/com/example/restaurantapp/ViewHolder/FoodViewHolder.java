@@ -1,10 +1,16 @@
 package com.example.restaurantapp.ViewHolder;
 
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.RecyclerView;
+import com.example.restaurantapp.Interface.ItemClickListener;
+import com.example.restaurantapp.R;
+
+/**
+ * Created by Shep on 10/25/2017.
+ */
 
 public class FoodViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
@@ -30,4 +36,3 @@ public class FoodViewHolder extends RecyclerView.ViewHolder implements View.OnCl
 
     }
 }
-

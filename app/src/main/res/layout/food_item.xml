@@ -13,12 +13,12 @@
         <ImageView
             android:id="@+id/food_image"
             android:scaleType="centerCrop"
-            android:src="@drawable/bac2"
+            android:src="@drawable/background"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
         <TextView
             android:id="@+id/food_name"
-            android:text="Nombre de comida"
+            android:text="Food name"
             android:textColor="@android:color/white"
             android:background="#4f0e0d0e"
             android:textSize="20sp"

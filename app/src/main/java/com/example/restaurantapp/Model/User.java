@@ -1,12 +1,11 @@
 package com.example.restaurantapp.Model;
 
-public class User {
-private String Name;
-private String Password;
 
+public class User {
+    private String Name;
+    private String Password;
 
     public User() {
-
     }
 
     public User(String name, String password) {

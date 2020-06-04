@@ -1,5 +1,4 @@
 package com.example.restaurantapp.Model;
-
 public class Food {
     private String Name,Image,Description,Price,Discount,MenuId;
 
