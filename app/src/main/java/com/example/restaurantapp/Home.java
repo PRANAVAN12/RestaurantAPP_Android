@@ -2,26 +2,27 @@ package com.example.restaurantapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.restaurantapp.Interface.ItemClickListener;
 import com.example.restaurantapp.Model.Category;
 import com.example.restaurantapp.ViewHolder.MenuViewHolder;
 import com.example.restaurantapp.common.Common;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
@@ -40,7 +41,7 @@ public class Home extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_home);
+        // setContentView(R.layout.activity_home);
         setContentView(R.layout.activity_home);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -52,12 +53,12 @@ public class Home extends AppCompatActivity
         category=database.getReference("Category");
 
 
-     BottomNavigationView fab = (BottomNavigationView) findViewById(R.id.fab);
+        BottomNavigationView fab = (BottomNavigationView) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
-        @Override
-          public void onClick(View view) {
-             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
             }
         });
 
@@ -91,10 +92,10 @@ public class Home extends AppCompatActivity
         adapter=new FirebaseRecyclerAdapter<Category, MenuViewHolder>(Category.class,R.layout.menu_item,MenuViewHolder.class,category) {
             @Override
             protected void populateViewHolder(MenuViewHolder viewHolder, Category model, int position) {
-            viewHolder.txtMenuName.setText(model.getName());
+                viewHolder.txtMenuName.setText(model.getName());
                 Picasso.with(getBaseContext()).load(model.getImage())
                         .into(viewHolder.imageView);
-              final  Category clickItem =model;
+                final  Category clickItem =model;
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
@@ -132,11 +133,11 @@ public class Home extends AppCompatActivity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-      //  int id = item.getItemId();
+        //  int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
         //if (id == R.id.action_settings) {
-         //   return true;
+        //   return true;
         //}
 
         return super.onOptionsItemSelected(item);
